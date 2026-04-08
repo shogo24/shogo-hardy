@@ -1,9 +1,11 @@
 pipeline {
     agent {
         docker {
-            image 'shogoha/jenkins-node-netlify:latest'
+            image 'node:24.14.0.alpine'
+            reuseNode true
         }
     }
+
     stages {
         stage('Build') {
             steps {
